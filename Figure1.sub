@@ -1,0 +1,10 @@
+#!/bin/bash
+# FILENAME:  Figure1.sub
+#SBATCH --nodes=1
+#SBATCH --time=01:00:00
+#SBATCH --mem-per-cpu=10G
+
+module load conda
+conda activate mlkenv
+python forward_same_epsilon.py --n 1000 --k 20 --small_update 
+python forward_same_epsilon.py --n 1000 --k 20 --large_update 
